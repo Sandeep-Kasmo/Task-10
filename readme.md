@@ -1,23 +1,33 @@
 📘 MongoDB ETL Pipeline (Python + Pandas)
 
 This project demonstrates a simple ETL workflow using MongoDB as the data source and pandas for transformation.
+
 It extracts customer and order data from a local MongoDB instance, applies cleaning and validation rules, merges both datasets, and prints the final combined output.
 
 📂 Folder Structure
+
 ETL Project/
+
 │── .venv/                 # Virtual environment
+
 │── src/
+
 │   ├── extract.py         # MongoDB connection + data extraction
+
 │   ├── transform.py       # Customer & order transformations + merge function
+
 │   ├── main.py            # ETL pipeline orchestrator
+
 │── readme.md              # Project documentation
 
 🚀 What This Project Does
+
 1️⃣ Extract
 
 Uses PyMongo to fetch documents from MongoDB:
 
 Connects to local MongoDB:
+
 mongodb://localhost:27017/
 
 Reads collections like:
@@ -63,6 +73,7 @@ Removes invalid rows
 3️⃣ Merge
 
 merge_data(customer_df, orders_df, 'customer_id', 'left')
+
 Performs a left join on customer_id.
 
 4️⃣ Close
@@ -87,6 +98,7 @@ Make sure MongoDB is running locally:
 mongod
 
 📘 File Details
+
 src/extract.py
 
 connect_mongodb() → Connects to localhost MongoDB
@@ -152,4 +164,5 @@ Build a UI to view merged customer–order profiles
 👤 Author
 
 Sandeep Reddy
+
 MongoDB • Python • ETL • Data Engineering
